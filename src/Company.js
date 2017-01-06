@@ -15,8 +15,6 @@ class Company extends Component {
     // }
 
     companyList(){
-      // return this.state.names.map((name) => {
-      window.foo = this.props.data
       if (this.props.data.companies) {
         return this.props.data.companies.map((company) => {
           return (

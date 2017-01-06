@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import { Button, Grid } from 'semantic-ui-react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 
@@ -26,10 +27,22 @@ class Company extends Component {
 
     render(){
       return(
-        <div>
-          {this.props.data.loading ? "True" : "false"}
-          {this.companyList()}
-        </div>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={8}>
+              <h1> Companies Name Below: </h1>
+            </Grid.Column>
+            <Grid.Column width={8}>
+              <Button primary>Add Company</Button>
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row>
+            <div>
+              {this.props.data.loading ? "True" : "false"}
+              {this.companyList()}
+            </div>
+          </Grid.Row>
+        </Grid>
       );
     }
 }
